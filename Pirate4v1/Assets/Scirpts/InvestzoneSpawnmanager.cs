@@ -8,16 +8,22 @@ public class InvestzoneSpawnmanager : MonoBehaviourPun
 {
     [SerializeField] Transform[] item;
     [SerializeField] Transform[] itembox;
+    [SerializeField] Transform[] cage;
     [SerializeField] GameObject objective;
     [SerializeField] GameObject Itembox;
+    [SerializeField] GameObject cageobject;
     public List<int> TakeList = new List<int>();
     public List<int> TakeList2 = new List<int>();
+    public List<int> TakeList3 = new List<int>();
     private int randomnumber;
     private int randomnumberbox;
+    private int randomnumbercage;
     int itemboxobj;
     int obj;
+    int cageobj;
     bool area1, area2, area3, area4;
     bool area1b, area2b, area3b, area4b;
+    bool area1c, area2c, area3c, area4c;
 
     void Start()
     {
@@ -106,6 +112,61 @@ public class InvestzoneSpawnmanager : MonoBehaviourPun
             TakeList2[j] = randomnumberbox;
             PhotonNetwork.Instantiate(Path.Combine("Photonprefabs", Itembox.name), itembox[TakeList2[j] - 1].position, Quaternion.identity);
             itemboxobj++;
+        }
+        //Spawncage
+        for (int k = 0; k < cage.Length && cageobj < 8; k++)
+        {
+            if (area1c == false)
+            {
+                int a = 0;
+                if (a < 1)
+                {
+                    randomnumberbox = UnityEngine.Random.Range(1, (cage.Length) - 9);
+                    a++;
+                }
+                randomnumberbox = UnityEngine.Random.Range(1, (cage.Length) - 9);
+                area1b = true;
+            }
+            else if (area2c == false)
+            {
+                int b = 0;
+                if (b < 1)
+                {
+                    randomnumberbox = UnityEngine.Random.Range(4, (cage.Length) - 6);
+                    b++;
+                }
+                randomnumberbox = UnityEngine.Random.Range(4, (cage.Length) - 6);
+                area2b = true;
+            }
+            else if (area3c == false)
+            {
+                int c = 0;
+                if (c < 1)
+                {
+                    randomnumberbox = UnityEngine.Random.Range(7, (cage.Length) - 3);
+                    c++;
+                }
+                randomnumberbox = UnityEngine.Random.Range(7, (cage.Length) - 3);
+                area3b = true;
+            }
+            else if (area4c == false)
+            {
+                int d = 0;
+                if (d < 1)
+                {
+                    randomnumberbox = UnityEngine.Random.Range(10, (cage.Length) + 1);
+                    d++;
+                }
+                randomnumberbox = UnityEngine.Random.Range(10, (cage.Length) + 1);
+                area4c = true;
+            }
+            while (TakeList3.Contains(randomnumberbox))
+            {
+                randomnumberbox = UnityEngine.Random.Range(1, (cage.Length) + 1);
+            }
+            TakeList3[k] = randomnumberbox;
+            PhotonNetwork.Instantiate(Path.Combine("Photonprefabs", cageobject.name), cage[TakeList3[k] - 1].position, Quaternion.identity);
+            cageobj++;
         }
     }
 }
