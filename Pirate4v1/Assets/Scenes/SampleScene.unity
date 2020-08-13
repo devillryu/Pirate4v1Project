@@ -920,14 +920,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-  - {fileID: 715801145}
   - {fileID: 1402752961}
   - {fileID: 687124130}
   - {fileID: 67807675}
   - {fileID: 1445965270}
+  - {fileID: 1029448435}
+  - {fileID: 2094271129}
+  - {fileID: 1597114518}
+  - {fileID: 934890389}
+  - {fileID: 733105800}
+  - {fileID: 1882232564}
+  - {fileID: 1403008895}
+  - {fileID: 810312097}
   objective: {fileID: 1235473818581668980, guid: b0a64da213eb7ec42bd86f328a84679c,
     type: 3}
-  TakeList: 000000000000000000000000
+  TakeList: 0000000000000000000000000000000000000000
 --- !u!4 &655569451
 Transform:
   m_ObjectHideFlags: 0
