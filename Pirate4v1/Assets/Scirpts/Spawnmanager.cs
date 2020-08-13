@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using Photon.Pun;
 
-public class InvestzoneSpawnmanager : MonoBehaviourPun
+public class Spawnmanager : MonoBehaviourPun
 {
     [SerializeField] Transform[] item;
     [SerializeField] Transform[] itembox;
