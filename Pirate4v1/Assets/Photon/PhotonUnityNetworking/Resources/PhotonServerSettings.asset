@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 0204f195-4273-4eb8-8f80-25c058341762
+    AppIdRealtime: ddcebc23-21f3-4faa-90f2-aa0ba9382ccc
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: 
+    FixedRegion: asia
     Server: 
     Port: 0
     ProxyServer: 
@@ -37,13 +37,10 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySpaceship
   - Fire
+  - OpenChest
   - RespawnSpaceship
   - RPC_SendTimer
-  - OpenChest
-  - changeColour
-  - RPCStartgame
   - CreatePlayer
-  - RPCCreatePlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

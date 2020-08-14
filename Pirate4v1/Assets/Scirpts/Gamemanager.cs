@@ -28,7 +28,6 @@ public class Gamemanager : MonoBehaviourPun
     {
         // Player.RefreshInstance(ref LocalPlayer, Playerprefab);
         //Foundbug
-
         CreatePlayer();
     }
 
@@ -45,23 +44,24 @@ public class Gamemanager : MonoBehaviourPun
     //     base.OnPlayerEnteredRoom(newPlayer);
     //     Player.RefreshInstance(ref LocalPlayer, Playerprefab);
     // }
-    void CreatePlayer()
+   public void CreatePlayer()
     {
 
         List<int> list = new List<int>();
 
-        for (int n = 0; n < 5; n++)    //  Populate list
+        for (int n = 0; n < SpawnPoint.Length; n++)    //  Populate list
         {
             list.Add(n);
         }
-        int spawnPicker = Random.Range(0, SpawnPoint.Length); //Bug
-        list.Add(spawnPicker);
+        print(list.Count);
+        int spawnPicker = Random.Range(0, list.Count); //Bug
+        
         if (Swaprole.chooserole.Role == "Survival")
             PhotonNetwork.Instantiate(Path.Combine("Photonprefabs", "Player"), SpawnPoint[spawnPicker].position, SpawnPoint[spawnPicker].rotation, 0);
         else
             PhotonNetwork.Instantiate(Path.Combine("Photonprefabs", "Hunter"), SpawnPoint[spawnPicker].position, SpawnPoint[spawnPicker].rotation, 0);
-        int i = list[spawnPicker];
         list.RemoveAt(spawnPicker);
+        print(spawnPicker);
     }
 
 }
